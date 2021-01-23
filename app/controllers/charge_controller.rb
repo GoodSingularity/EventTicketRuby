@@ -11,7 +11,7 @@ class ChargeController < ApplicationController
                         payment_method_types: ['card'],
                         line_items: [{
                           name: @event.Title,
-                          description: "Bought ticket for event",
+                          description: 'Bought ticket for event',
 			  amount: @event.Price,
                           currency: 'eur',
                           quantity: 1
