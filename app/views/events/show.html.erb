@@ -24,6 +24,9 @@
   <strong>Price:</strong>
   <%= @event.Price %>
 </p>
-
+<input type="number" id="amount" name="ticketsAmount"
+       min="1" max="<%= @event.Tickets %>">
+<%= button_to 'Buy', charge_create_path, method: :post, params: { id: @event.id }, remote:true %>
+<
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
