@@ -6,11 +6,13 @@ class ChargeController < ApplicationController
              return
           end
 	  #setting up Stripe session for payment
-	  @session = Stripe::Charge::Session.create(
+	    #setting up Stripe session for payment
+	  @session = Stripe::Checkout::Session.create(
                         payment_method_types: ['card'],
                         line_items: [{
-                          title: event.title,
-                          amount: event.price,
+                          name: @event.Title,
+                          description: "Bought ticket for event",
+			  amount: @event.Price,
                           currency: 'eur',
                           quantity: 1
                         }],
