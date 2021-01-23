@@ -12,7 +12,7 @@ class ChargeController < ApplicationController
                         line_items: [{
                           name: @event.Title,
                           description: 'Bought ticket for event',
-			  amount: @event.Price,
+			  amount: @event.Price*10,
                           currency: 'eur',
                           quantity: 1
                         }],

@@ -1,6 +1,5 @@
-console.log('<%= @event.Title %>');
 
-const stripe = Stripe('<%=Rails.configuration.stripe[:publishable_key] %>);
+const stripe = Stripe('<%= Rails.configuration.stripe[:publishable_key] %>');
 
 stripe.redirectToCheckout({
  sessionId: '<%= @session.id %>'
