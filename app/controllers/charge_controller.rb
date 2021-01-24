@@ -6,6 +6,7 @@ class ChargeController < ApplicationController
              return
           end
            session[:current_id] = @event.id
+	   session[:current_tickets] = @event.Tickets
 	  #setting up Stripe session for payment
 	    #setting up Stripe session for payment
 	  @session = Stripe::Checkout::Session.create(
@@ -26,6 +27,8 @@ class ChargeController < ApplicationController
         end
 	
 	def success
+		@event = Event.find(session[:current_id])
+		@update = @event.update(Tickets: session[:current_tickets]-1)
 		@result = Ticket.new(Event_id: session[:current_id], amount: 1 )
 		@result.save
 	end
