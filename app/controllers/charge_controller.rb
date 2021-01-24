@@ -5,6 +5,7 @@ class ChargeController < ApplicationController
              redirect_to root_path
              return
           end
+           session[:current_id] = @event.id
 	  #setting up Stripe session for payment
 	    #setting up Stripe session for payment
 	  @session = Stripe::Checkout::Session.create(
@@ -25,7 +26,7 @@ class ChargeController < ApplicationController
         end
 	
 	def success
-		@result = Ticket.new(Event_id: 1, amount: 1)
+		@result = Ticket.new(Event_id: session[:current_id], amount: 1 )
 		@result.save
 	end
 
