@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tickets
 #Obsluga kupna ticketu na event
   scope 'charge' do
         post 'create', to: 'charge#create', as: 'charge_create'
