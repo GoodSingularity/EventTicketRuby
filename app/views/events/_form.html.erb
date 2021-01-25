@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :Tickets %>
-    <%= form.number_field :Tickets %>
+    <%= form.number_field :Tickets , {min: 1, max: 50}%>
   </div>
 
   <div class="field">
     <%= form.label :Price %>
-    <%= form.number_field :Price %>
+    <%= form.number_field :Price , {min: 50, max: 1000}%>
   </div>
 
   <div class="actions">
