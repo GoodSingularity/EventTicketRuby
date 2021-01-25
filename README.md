@@ -36,4 +36,4 @@ url = "http://..."
 data = JSON.parse(open(url).read)
 source : https://stackoverflow.com/questions/23319437/rails-fetch-json-data-from-remote-url-api-call
 
-Aplikacja została postawiona na heroku. https://ticketperuevent.herokuapp.com/ Jest w trakcie fazie testów.
+Aplikacja została postawiona na heroku. https://rocky-basin-27096.herokuapp.com/ Jest w trakcie fazie testów.
