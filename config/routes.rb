@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :tickets
+root 'events#index'
 #Obsluga kupna ticketu na event
   scope 'charge' do
         post 'create', to: 'charge#create', as: 'charge_create'
