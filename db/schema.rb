@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_24_174553) do
+ActiveRecord::Schema.define(version: 2021_02_05_154134) do
 
   create_table "events", force: :cascade do |t|
     t.string "Title"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 2021_01_24_174553) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "investments", force: :cascade do |t|
+    t.string "text"
+    t.integer "ticket_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ticket_id"], name: "index_investments_on_ticket_id"
+  end
+
   create_table "tickets", force: :cascade do |t|
     t.integer "Event_id"
     t.integer "amount"
@@ -29,4 +37,25 @@ ActiveRecord::Schema.define(version: 2021_01_24_174553) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
+    t.string "name"
+    t.string "surname"
+    t.date "birthdate"
+    t.string "sex"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "wallets", force: :cascade do |t|
+    t.integer "money"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_wallets_on_user_id"
+  end
+
+  add_foreign_key "investments", "tickets"
+  add_foreign_key "wallets", "users"
 end

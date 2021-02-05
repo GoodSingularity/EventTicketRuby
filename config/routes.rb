@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :investments
+  resources :wallets
   resources :tickets
 root 'events#index'
 #Obsluga kupna ticketu na event
