@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stock.name %>
+</p>
+
+<p>
+  <strong>Ammount:</strong>
+  <%= @stock.ammount %>
+</p>
+
+<p>
+  <strong>Close price:</strong>
+  <%= @stock.close_price %>
+</p>
+
+<p>
+  <strong>Open price:</strong>
+  <%= @stock.open_price %>
+</p>
+
+<p>
+  <strong>High:</strong>
+  <%= @stock.high %>
+</p>
+
+<p>
+  <strong>Low:</strong>
+  <%= @stock.low %>
+</p>
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>

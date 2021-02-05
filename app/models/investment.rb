@@ -1,3 +1,5 @@
 class Investment < ApplicationRecord
-  belongs_to :ticket
+  belongs_to :wallet
+  has_many :tickets
+  has_many :stocks
 end

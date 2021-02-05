@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  ammount: 1
+  close_price: 1.5
+  open_price: 1.5
+  high: 1.5
+  low: MyString
+
+two:
+  name: MyString
+  ammount: 1
+  close_price: 1.5
+  open_price: 1.5
+  high: 1.5
+  low: MyString
