@@ -17,7 +17,7 @@ class InvestmentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create investment" do
     assert_difference('Investment.count') do
-      post investments_url, params: { investment: { text: @investment.text, ticket_id: @investment.ticket_id } }
+      post investments_url, params: { investment: { stock_id: @investment.stock_id, text: @investment.text, ticket_id: @investment.ticket_id } }
     end
 
     assert_redirected_to investment_url(Investment.last)
@@ -34,7 +34,7 @@ class InvestmentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update investment" do
-    patch investment_url(@investment), params: { investment: { text: @investment.text, ticket_id: @investment.ticket_id } }
+    patch investment_url(@investment), params: { investment: { stock_id: @investment.stock_id, text: @investment.text, ticket_id: @investment.ticket_id } }
     assert_redirected_to investment_url(@investment)
   end
 

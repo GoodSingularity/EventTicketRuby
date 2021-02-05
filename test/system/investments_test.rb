@@ -14,6 +14,7 @@ class InvestmentsTest < ApplicationSystemTestCase
     visit investments_url
     click_on "New Investment"
 
+    fill_in "Stock", with: @investment.stock_id
     fill_in "Text", with: @investment.text
     fill_in "Ticket", with: @investment.ticket_id
     click_on "Create Investment"
@@ -26,6 +27,7 @@ class InvestmentsTest < ApplicationSystemTestCase
     visit investments_url
     click_on "Edit", match: :first
 
+    fill_in "Stock", with: @investment.stock_id
     fill_in "Text", with: @investment.text
     fill_in "Ticket", with: @investment.ticket_id
     click_on "Update Investment"

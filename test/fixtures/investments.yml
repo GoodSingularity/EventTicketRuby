@@ -3,7 +3,9 @@
 one:
   text: MyString
   ticket: one
+  stock: one
 
 two:
   text: MyString
   ticket: two
+  stock: two
