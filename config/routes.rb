@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :investments
   resources :wallets
   resources :tickets
-root 'events#index'
+  root to: "welcome#show"
 #Obsluga kupna ticketu na event
   scope 'charge' do
         post 'create', to: 'charge#create', as: 'charge_create'
