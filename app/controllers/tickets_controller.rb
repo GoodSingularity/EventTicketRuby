@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: %w[ show edit update destroy ]
-
+  before_action :require_login
   # GET /tickets
   # GET /tickets.json
   def index

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :stocks
-  resources :investments
   resources :wallets
   resources :tickets
   root to: "welcome#show"

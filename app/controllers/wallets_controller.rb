@@ -1,6 +1,6 @@
 class WalletsController < ApplicationController
   before_action :set_wallet, only: %w[ show edit update destroy ]
-
+  before_action :require_login
   # GET /wallets
   # GET /wallets.json
   def index
