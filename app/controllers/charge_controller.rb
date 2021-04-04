@@ -1,5 +1,7 @@
 class ChargeController < ApplicationController
-	def create
+  before_action :require_login
+
+  def create
           @event = Event.find(params[:id])
 	  if @event.nil?
              redirect_to root_path

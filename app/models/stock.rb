@@ -1,3 +1,3 @@
 class Stock < ApplicationRecord
-	belongs_to :investment
+	belongs_to :wallet
 end
